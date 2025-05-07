@@ -1,0 +1,17 @@
+name: Trigger GitLab Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: [self-hosted, buildkitsandbox]
+    steps:
+      - name: Trigger GitLab Pipeline on 'dev' branch
+        run: |
+          curl -X POST --fail \
+            -F token=${{ secrets.GITLAB_TRIGGER_TOKEN }} \
+            -F ref=dev \
+            http://192.168.101.120/api/v4/projects/126/trigger/pipeline
