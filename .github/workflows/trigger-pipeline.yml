@@ -7,7 +7,7 @@ on:
 
 jobs:
   trigger:
-    runs-on: [self-hosted, buildkitsandbox, avantsec_runner]
+    runs-on: [avantsec_runner]
     steps:
       - name: Trigger GitLab Pipeline on 'dev' branch
         run: |
