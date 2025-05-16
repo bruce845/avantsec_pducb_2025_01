@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.6",
+    "canvasjs": "^1.8.3",
+    "react-bootstrap": "^2.10.10"
+  }
+}
