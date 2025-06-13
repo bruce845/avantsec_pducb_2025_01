@@ -82,6 +82,15 @@ html, body, .conteiner {
   border-top: 1px solid #eee;
 }
 
+.barra-lateral ul li a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none; /* remove o sublinhado */
+  color: inherit; /* usa a cor do texto do pai (li) */
+  font-size: 14px;
+}
+
+
 /* Barra lateral direita */
 .notificacoes {
   position: fixed;
@@ -252,4 +261,144 @@ main > .rodape {
 
 .redes {
   margin-top: 8px;
+}
+
+/*VIZUALIZAR PROCESSOS*/
+
+.search-input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #d9d9f5;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+  color: #333;
+}
+
+.filter-btn {
+  background: #ece5ff;
+  color: #7d4dff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  margin-left: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.processos-section {
+  margin-top: 30px;
+  position: relative;
+}
+
+.section-title {
+  color: #7d4dff;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.importar-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: #ece5ff;
+  color: #7d4dff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.process-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 60px;
+  font-size: 13px;
+}
+
+.process-table thead {
+  background: #ece5ff;
+  color: #333;
+}
+
+.process-table th,
+.process-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.process-table td a {
+  color: #346aff;
+  margin-right: 10px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.modal {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+.modal h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #333;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.modal-buttons .btn {
+  background-color: #f0e9ff;
+  color: #6a1b9a;
+  font-weight: bold;
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.modal-buttons .btn:hover {
+  background-color: #e4d9fc;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 20px;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  color: #999;
 }

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel | JuriSync</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="conteiner">
+    <aside class="barra-lateral">
+      <div class="logo">
+        <img src="src/LOGO.jpeg" alt="Logo da empresa" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li class="ativo"><a href="visualizarProcessos.html">📁 Visualizar Processos</a></li>
+          <li><a href="monetaria.html">💸 Atualização Monetária</a></li>
+          <li><a href="alunos.html">🎓 Alunos e Dívidas</a></li>
+          <li><a href="usuarios.html">👥 Usuários</a></li>
+        </ul>
+      </nav>
+      <div class="usuario">Bruce</div>
+    </aside>
+
+    <main>
+      <header class="header">
+        <input type="text" placeholder="Pesquisar" class="search-input" />
+        <button class="btn filter-btn">Filtrar</button>
+      </header>
+    
+      <section class="processos-section">
+        <h2 class="section-title">Atualizar Processos</h2>
+    
+        <button class="btn importar-btn">➕ Importar Planilha</button>
+    
+        <table class="process-table">
+          <thead>
+            <tr>
+              <th>Número do processo</th>
+              <th>Cliente</th>
+              <th>Tribunal</th>
+              <th>Último andamento</th>
+              <th>Status</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>00000</td>
+              <td>Fulano</td>
+              <td>XXXX</td>
+              <td>Há 3 semanas</td>
+              <td>Em Andamento</td>
+              <td><a href="#">Visualizar</a> <a href="#">Baixar</a></td>
+            </tr>
+            <tr>
+              <td>111111</td>
+              <td>Sicrano</td>
+              <td>XX</td>
+              <td>Ontem</td>
+              <td>Em Andamento</td>
+              <td><a href="#">Visualizar</a> <a href="#">Baixar</a></td>
+            </tr>
+            <tr>
+              <td>222222</td>
+              <td>Beltrano</td>
+              <td>XXX</td>
+              <td>Há 2 semanas</td>
+              <td>Arquivado</td>
+              <td><a href="#">Visualizar</a> <a href="#">Baixar</a></td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>-</td>
+              <td>Arquivado</td>
+              <td><a href="#">Visualizar</a> <a href="#">Baixar</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+    
+  </div>
+
+ <!-- Modal de Importação -->
+<div class="modal-overlay" id="importModal">
+  <div class="modal">
+    <h3>Como deseja importar os processos?</h3>
+    <div class="modal-buttons">
+      <button class="btn" id="btnManual">📄 Importar Manualmente</button>
+      <label class="btn" for="excelInput">📁 Planilha Excel (.xlsx)</label>
+      <input type="file" id="excelInput" accept=".xlsx" style="display: none;">
+    </div>
+    <button class="btn-close" id="closeModal">✖</button>
+  </div>
+</div>
+
+
+<script>
+  const modal = document.getElementById('importModal');
+  const openBtn = document.querySelector('.importar-btn');
+  const closeBtn = document.getElementById('closeModal');
+  const manualBtn = document.getElementById('btnManual');
+  const planilhaLabel = document.getElementById('btnPlanilha');
+  const excelInput = document.getElementById('excelInput');
+
+  openBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+  });
+
+  closeBtn.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+
+  window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.style.display = 'none';
+    }
+  });
+
+  // Redireciona para Alunos e Dívidas
+  manualBtn.addEventListener('click', () => {
+    window.location.href = 'alunos.html';
+  });
+
+  // Validação do arquivo Excel
+  excelInput.addEventListener('change', function () {
+    const file = this.files[0];
+    if (file && file.name.endsWith('.xlsx')) {
+      alert(`Arquivo "${file.name}" selecionado com sucesso!`);
+      modal.style.display = 'none';
+      // Aqui você pode atualizar a tabela com os dados da planilha, se quiser
+    } else {
+      alert('Por favor, selecione um arquivo .xlsx válido.');
+    }
+  });
+</script>
+
+
+</body>
+
+</html>
