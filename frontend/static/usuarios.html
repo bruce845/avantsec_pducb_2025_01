@@ -17,19 +17,130 @@
       </div>
       <nav>
         <ul>
-            <li><a href="index.html">🏠 Início</a></li>
-            <li><a href="visualizarProcessos.html">📁 Visualizar Processos</a></li>
-            <li><a href="monetaria.html">💸 Atualização Monetária</a></li>
-            <li><a href="alunos.html">🎓 Alunos e Dívidas</a></li>
-            <li class="ativo"><a href="usuarios.html">👥 Usuários</a></li>
-          </ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li><a href="visualizarProcessos.html">📁 Visualizar Processos</a></li>
+          <li><a href="monetaria.html">💸 Atualização Monetária</a></li>
+          <li><a href="alunos.html">🎓 Alunos e Dívidas</a></li>
+          <li class="ativo"><a href="usuarios.html">👥 Usuários</a></li>
+        </ul>
       </nav>
       <div class="usuario">Bruce</div>
     </aside>
 
     <main>
+      <header class="header">
+        <input type="text" placeholder="Pesquisar por nome, email ou usuário..." class="search-input" />
+        <button class="btn filter-btn">Filtrar</button>
+      </header>
 
+      <section class="processos-section">
+        <h2 class="section-title">Gerenciar Usuários</h2>
+
+        <button class="btn importar-btn" id="addUserBtn">➕ Adicionar Novo Usuário</button>
+
+        <table class="process-table">
+          <thead>
+            <tr>
+              <th>Usuário</th>
+              <th>Nome</th>
+              <th>Email</th>
+              <th>Telefone</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>marcos.albuquerque</td>
+              <td>Marcos Albuquerque</td>
+              <td>marcos.a@example.com</td>
+              <td>(61) 99876-5432</td>
+              <td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+            </tr>
+            <tr>
+              <td>ana.silva</td>
+              <td>Ana Silva</td>
+              <td>ana.silva@example.com</td>
+              <td>(11) 91234-5678</td>
+              <td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+            </tr>
+            <tr>
+              <td>carlos.souza</td>
+              <td>Carlos Souza</td>
+              <td>carlos.s@example.com</td>
+              <td>(21) 98877-6655</td>
+              <td><a href="#">Editar</a> | <a href="#">Excluir</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
-
   </div>
-  </body>
+
+  <!-- Modal de Adicionar Usuário -->
+  <div id="addUserModal" class="modal-overlay" style="display:none;">
+    <div class="modal" style="width: 450px;">
+      <span class="btn-close" id="closeAddUserModal">✖</span>
+      <h3>Adicionar Novo Usuário</h3>
+      <form id="addUserForm">
+        <div class="form-group">
+          <label for="userName">Nome Completo</label>
+          <input type="text" id="userName" required>
+        </div>
+        <div class="form-group">
+          <label for="userLogin">Usuário (Login)</label>
+          <input type="text" id="userLogin" required>
+        </div>
+        <div class="form-group">
+          <label for="userEmail">Email</label>
+          <input type="email" id="userEmail" required>
+        </div>
+        <div class="form-group">
+          <label for="userPhone">Telefone</label>
+          <input type="text" id="userPhone" placeholder="(00) 00000-0000" required>
+        </div>
+        <div class="form-group">
+          <label for="userProfile">Perfil</label>
+          <select id="userProfile" required>
+            <option value="">Selecione um perfil</option>
+            <option value="advogado">Advogado</option>
+            <option value="representante">Representante de Instituição</option>
+            <option value="funcionario">Funcionário do Escritório</option>
+          </select>
+        </div>
+        <div class="form-group" style="text-align: center; margin-top: 20px;">
+          <button type="submit">Salvar Usuário</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Modal de Adicionar Usuário
+    const addUserModal = document.getElementById('addUserModal');
+    const openAddUserBtn = document.getElementById('addUserBtn');
+    const closeAddUserBtn = document.getElementById('closeAddUserModal');
+
+    openAddUserBtn.addEventListener('click', () => {
+      addUserModal.style.display = 'flex';
+    });
+
+    closeAddUserBtn.addEventListener('click', () => {
+      addUserModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === addUserModal) {
+        addUserModal.style.display = 'none';
+      }
+    });
+
+    document.getElementById('addUserForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Novo usuário adicionado com sucesso!');
+      addUserModal.style.display = 'none';
+      this.reset();
+    });
+  </script>
+</body>
+
+</html>

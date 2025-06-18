@@ -534,3 +534,39 @@ main > .rodape {
   cursor: pointer;
   font-weight: 500;
 }
+
+/*USUARIOS*/
+
+/* Estilos para o formulário dentro do modal */
+.modal .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.modal .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.modal .form-group input[type="text"],
+.modal .form-group input[type="email"],
+.modal .form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal .form-group button {
+  background: #7d4dff;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
