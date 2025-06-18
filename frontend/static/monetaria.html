@@ -17,19 +17,69 @@
       </div>
       <nav>
         <ul>
-            <li><a href="index.html">🏠 Início</a></li>
-            <li><a href="visualizarProcessos.html">📁 Visualizar Processos</a></li>
-            <li class="ativo"><a href="monetaria.html">💸 Atualização Monetária</a></li>
-            <li><a href="alunos.html">🎓 Alunos e Dívidas</a></li>
-            <li><a href="usuarios.html">👥 Usuários</a></li>
-          </ul>
+          <li><a href="index.html">🏠 Início</a></li>
+          <li><a href="visualizarProcessos.html">📁 Visualizar Processos</a></li>
+          <li class="ativo"><a href="monetaria.html">💸 Atualização Monetária</a></li>
+          <li><a href="alunos.html">🎓 Alunos e Dívidas</a></li>
+          <li><a href="usuarios.html">👥 Usuários</a></li>
+        </ul>
       </nav>
       <div class="usuario">Bruce</div>
     </aside>
 
     <main>
+      <section class="monetary-update-section">
+        <h1>Processar Atualização Monetária - JURISCALC </h1>
 
+        <div class="form-group">
+          <label for="clientSelect">Selecionar Cliente</label>
+          <select id="clientSelect">
+            <option value="">Selecione um cliente</option>
+            <option value="client1">Cliente A</option>
+            <option value="client2">Cliente B</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="valueInput">Digite o valor</label>
+          <input type="text" id="valueInput" placeholder="Ex: 1500.00">
+        </div>
+
+        <div class="form-group">
+          <label for="dateInput">Data</label>
+          <input type="date" id="dateInput">
+        </div>
+
+        <div class="form-group text-center">
+          <button id="calculateButton">⚙️ Calcular</button>
+        </div>
+
+        <div id="calculationResult" class="calculation-result hidden">
+          Cálculo realizado com sucesso via Juriscalc utilizando correção monetária e juros até <span id="currentDate"></span>.
+          <br>
+          Verifique os valores atualizados conforme os parâmetros selecionados.
+        </div>
+      </section>
     </main>
 
   </div>
-  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const calculateButton = document.getElementById('calculateButton');
+      const calculationResult = document.getElementById('calculationResult');
+      const currentDateSpan = document.getElementById('currentDate');
+
+      calculateButton.addEventListener('click', () => {
+        const today = new Date();
+        const dd = String(today.getDate()).padStart(2, '0');
+        const mm = String(today.getMonth() + 1).padStart(2, '0');
+        const yyyy = today.getFullYear();
+        const formattedDate = `${dd}/${mm}/${yyyy}`;
+
+        currentDateSpan.textContent = formattedDate;
+        calculationResult.classList.remove('hidden');
+      });
+    });
+  </script>
+</body>

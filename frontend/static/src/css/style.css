@@ -402,3 +402,135 @@ main > .rodape {
   cursor: pointer;
   color: #999;
 }
+
+/*MONETÁRIA/
+
+/* Estilos baseados em visualizarProcessos.html e style.css */
+.monetary-update-section {
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  max-width: 500px;
+  margin: 40px auto;
+  border: 1px solid #eee;
+}
+
+.monetary-update-section h1 {
+  color: #333;
+  font-size: 22px;
+  margin-bottom: 28px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 7px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-sizing: border-box;
+  font-size: 14px;
+  background: #f9f9fb;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7d4dff;
+  /* Cor roxa para foco */
+  background-color: #f3f0ff;
+  outline: none;
+}
+
+.form-group.text-center {
+  text-align: center;
+}
+
+/* Estilo do botão "Calcular" para se assemelhar ao "Importar" */
+#calculateButton {
+  background: #ece5ff;
+  /* Fundo roxo claro */
+  color: #7d4dff;
+  /* Texto roxo */
+  padding: 10px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  display: inline-block;
+  margin-top: 10px;
+  transition: background-color 0.2s;
+  width: 100%;
+  max-width: 250px;
+}
+
+#calculateButton:hover {
+  background-color: #e0d6ff;
+}
+
+.calculation-result {
+  margin-top: 22px;
+  padding: 16px;
+  border: 1px solid #c3e6cb;
+  background-color: #eafbe7;
+  color: #256029;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.calculation-result.hidden {
+  display: none;
+}
+
+/*ALUNOS*/
+
+/* Estilos para o formulário dentro do modal */
+.modal .form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.modal .form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #555;
+  font-size: 14px;
+}
+
+.modal .form-group input[type="text"],
+.modal .form-group input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+.modal .form-group button {
+  background: #7d4dff;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
